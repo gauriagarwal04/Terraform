@@ -4,6 +4,6 @@ variable "instance_type" {
 }
 
 variable "ami" {
-  descrption = "ec2 ami"
+  description = "ec2 ami"
   type = string
 }
