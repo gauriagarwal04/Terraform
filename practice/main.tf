@@ -3,7 +3,6 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = ">= 3.72"
-    
     }
   }
    backend "remote" {
@@ -14,8 +13,6 @@ terraform {
     }
   }
 }
-
-
 provider "aws" {
   region = "us-east-1"
 }
