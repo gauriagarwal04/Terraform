@@ -128,7 +128,7 @@ resource "aws_security_group" "webserver-security-group_B"{
 }
 
 resource "aws_instance" "ec2_private_B" {
-  ami = "ami-068257025f72f470d"
+  ami = "ami-08c40ec9ead489470"
   instance_type = var.instance_type
   subnet_id = aws_subnet.default_az1_B.id
   security_groups = ["${aws_security_group.webserver-security-group_B.id}"]
