@@ -106,6 +106,14 @@ resource "aws_security_group" "webserver-security-group"{
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description="ICMP rule"
+    from_port = -1
+    to_port = -1
+    protocol = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
    ingress {
     description      = "HTTPS"
     from_port = 443
@@ -141,7 +149,7 @@ resource "aws_instance" "ec2_private" {
   tags = {
     "Name" = "EC2-Private-Instance-A"
   }
-  associate_public_ip_address = false
+  associate_public_ip_address = true
 #user_data                   = "${data.template_file.provision.rendered}"
 #iam_instance_profile = "${aws_iam_instance_profile.some_profile.id}"
 lifecycle {
